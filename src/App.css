@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  --main-color: #f88217;
+}
+
+@theme {
+  --font-cairo: "Cairo", sans-serif;
+}
+
+body {
+  font-family: var(--font-cairo);
+}
+
+.main-title {
+  border: 2px solid var(--main-color);
+  width: fit-content;
+}
+
+.main-title::before,
+.main-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-color);
+  transform: translateY(-50%);
+  clip-path: polygon(
+    40% 0%,
+    65% 0%,
+    45% 35%,
+    70% 35%,
+    30% 100%,
+    45% 60%,
+    25% 60%
+  );
+}
+
+.main-title::before {
+  left: -60px;
+}
+
+.main-title::after {
+  right: -60px;
+}
+
+.main-title:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+}
+
+.main-title:hover::after {
+  z-index: -1;
+  animation: right-move 0.5s linear forwards;
+}
+
+.bulb-label input {
+  appearance: none;
+}
+.bulb-label input:checked ~ span {
+  left: 50px;
+}
+
+.bulb-label input:checked ~ span .bulb-icon {
+  color: rgba(255, 255, 255, 1);
+  filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff)
+    drop-shadow(0 0 15px #fff);
+}
+
+.bulb-img {
+  position: absolute;
+  width: 348px;
+  height: 408px;
+  left: 50%;
+  transform: translatex(-50%);
+  pointer-events: none;
+  background-image: url(../assets/bulb/bulb_off1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.bulb-label input:checked ~ .bulb-img {
+  background-image: url(../assets/bulb/bulb_on1.png);
+}
+
+@keyframes left-move {
+  50% {
+    left: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    left: 0;
+    width: 51%;
+    height: 100%;
+  }
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    right: 0;
+    width: 51%;
+    height: 100%;
+  }
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear alternate;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
