@@ -4,7 +4,7 @@ import { IoBulbOutline } from "react-icons/io5";
 const Bulb = () => {
   return (
     <div
-      className="order-1 lg:order-2 flex justify-center items-center relative min-h-[450px] w-full top-[-200px]"
+      className="order-1 lg:order-2 flex justify-center lg:justify-end items-center relative min-h-[450px] w-full top-[-200px]"
       data-aos="zoom-in"
     >
       <label className="bulb-label relative w-[100px] h-[50px] bg-[#f98f2e] rounded-[10px] cursor-pointer">

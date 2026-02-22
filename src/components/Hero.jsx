@@ -3,7 +3,7 @@ import Bulb from "./Bulb";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[calc(100vh-104px)] text-center md:text-right flex items-center overflow-hidden bg-slate-950">
+    <section className="relative min-h-[calc(100vh-104px)] text-center lg:text-right flex items-center overflow-hidden bg-slate-950">
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=2000"

@@ -35,7 +35,7 @@ const Footer = () => {
                     <FaMapMarkerAlt />
                   </div>
                   <p className="text-gray-300 text-center md:text-right">
-                    دمياط الجدييدة، شارع 17 <br />
+                    دمياط الجديدة، شارع 17 ،<br />
                     بجوار لي صالون.
                   </p>
                 </div>
