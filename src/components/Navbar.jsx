@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Navbar = ({ sections }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const navLinks = [
     { name: "الرئيسية", ref: sections.heroRef },
@@ -11,6 +12,25 @@ const Navbar = ({ sections }) => {
     { name: "الشهادات", ref: sections.certificatesRef },
     { name: "تواصل معنا", ref: sections.footerRef },
   ];
+
+  // 2. لوجيك إغلاق القائمة عند الضغط خارجها
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   const scrollToSection = (ref) => {
     if (ref && ref.current) {
@@ -27,7 +47,10 @@ const Navbar = ({ sections }) => {
   };
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 py-5 font-cairo">
+    <nav
+      ref={menuRef}
+      className="bg-white shadow-md sticky top-0 z-50 py-5 font-cairo"
+    >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex justify-between h-16 items-center flex-row-reverse">
           <div

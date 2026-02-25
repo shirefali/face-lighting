@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="bg-slate-700 text-white pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-right">
-          <div className="flex flex-col items-center md:items-start">
+          {/* <div className="flex flex-col items-center md:items-start">
             <h3 className="text-xl font-bold mb-6 border-b-2 border-[var(--main-color)] pb-2">
               موقعنا
             </h3>
@@ -41,8 +41,42 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+          </div> */}
+          <div
+            className="flex flex-col items-center md:items-start"
+            data-aos="fade-down"
+          >
+            <h3 className="text-xl font-bold mb-6 border-b-2 border-[var(--main-color)] pb-2">
+              موقعنا
+            </h3>
+
+            {/* الحاوية الرئيسية للعناوين */}
+            <div className="flex flex-col gap-6 w-full max-w-[250px] md:max-w-none">
+              {/* الفرع الأول */}
+              <div className="flex items-start gap-3 justify-start">
+                <div className="text-[var(--main-color)] text-2xl mt-1 shrink-0">
+                  <FaMapMarkerAlt />
+                </div>
+                <p className="text-gray-300 text-right">
+                  دمياط، شارع نافع، <br />
+                  بجوار الاستاد.
+                </p>
+              </div>
+
+              {/* الفرع الثاني */}
+              <div className="flex items-start gap-3 justify-start">
+                <div className="text-[var(--main-color)] text-2xl mt-1 shrink-0">
+                  <FaMapMarkerAlt />
+                </div>
+                <p className="text-gray-300 text-right">
+                  دمياط الجديدة، شارع 17،
+                  <br />
+                  بجوار لي صالون.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center" data-aos="fade-up">
             <h3 className="text-xl font-bold mb-6 border-b-2 border-[var(--main-color)] pb-2">
               تواصل معنا
             </h3>
@@ -72,8 +106,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center md:items-end">
-            <div data-aos="zoom-in-down" className="flex items-center gap-3">
+          <div
+            className="flex flex-col items-center md:items-end"
+            data-aos="zoom-in-down"
+          >
+            <div className="flex items-center gap-3">
               <span className="text-2xl font-bold text-[var(--main-color)]">
                 Face Lighting
               </span>

@@ -27,6 +27,10 @@ const Portfolio = () => {
       id: 6,
       img: "assets/portfolio/10.jpeg",
     },
+    {
+      id: 7,
+      img: "assets/portfolio/15.jpeg",
+    },
   ];
 
   const [showAll, setShowAll] = useState(false);
