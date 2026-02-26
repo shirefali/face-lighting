@@ -12,7 +12,7 @@ function AboutUs() {
           <div className="lg:w-1/2 space-y-8">
             <div data-aos="fade-right" className="space-y-4">
               <h3 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-                أكثر من 15 عاماً من <br />
+                أكثر من 10 أعوام من <br />
                 <span className="text-[var(--main-color)]">
                   التميز في مجال الكهرباء{" "}
                 </span>
