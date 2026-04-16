@@ -121,7 +121,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/mohamed.khedr.50552?locale=ar_AR"
+                href="https://www.facebook.com/mkh.slt"
                 className="p-3 bg-slate-900 rounded-full hover:bg-[#1877f2] transition-colors text-xl"
               >
                 <FaFacebookF />
