@@ -11,6 +11,19 @@ import {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const [isPhoneClicked, setIsPhoneClicked] = useState(false);
+  const [isWhatsappClicked, setIsWhatsappClicked] = useState(false);
+
+  const handlePhoneClick = () => {
+    setIsPhoneClicked(true);
+    setTimeout(() => setIsPhoneClicked(false), 3000);
+  };
+
+  const handleWhatsappClick = () => {
+    setIsWhatsappClicked(true);
+    setTimeout(() => setIsWhatsappClicked(false), 3000);
+  };
+
   return (
     <footer className="bg-slate-700 text-white pt-16 pb-8">
       <div className="container mx-auto px-6">
@@ -81,9 +94,14 @@ const Footer = () => {
               تواصل معنا
             </h3>
             <div className="space-y-4">
-              <div className="flex items-center justify-center gap-3 group cursor-pointer">
+              <div
+                onClick={handlePhoneClick}
+                className={`flex items-center justify-center gap-3 group cursor-pointer ${
+                  isPhoneClicked ? "pointer-events-none opacity-50" : ""
+                }`}
+              >
                 <a
-                  href="tel:+201016773028"
+                  href={isPhoneClicked ? undefined : "tel:+201016773029"}
                   className="text-gray-300 group-hover:text-white transition-colors"
                 >
                   201016773029+
@@ -92,9 +110,16 @@ const Footer = () => {
                   <FaPhoneAlt />
                 </div>
               </div>
-              <div className="flex items-center justify-center gap-3 group cursor-pointer">
+              <div
+                onClick={handleWhatsappClick}
+                className={`flex items-center justify-center gap-3 group cursor-pointer ${
+                  isWhatsappClicked ? "pointer-events-none opacity-50" : ""
+                }`}
+              >
                 <a
-                  href="https://wa.me/201220403484"
+                  href={
+                    isWhatsappClicked ? undefined : "https://wa.me/201220403484"
+                  }
                   className="text-gray-300 group-hover:text-white transition-colors"
                 >
                   201220403484+
