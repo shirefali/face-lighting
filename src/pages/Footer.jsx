@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaFacebookF,
   FaTiktok,
@@ -101,7 +101,7 @@ const Footer = () => {
                 }`}
               >
                 <a
-                  href={isPhoneClicked ? undefined : "tel:+201016773029"}
+                  href="tel:+201016773029"
                   className="text-gray-300 group-hover:text-white transition-colors"
                 >
                   201016773029+
@@ -117,9 +117,7 @@ const Footer = () => {
                 }`}
               >
                 <a
-                  href={
-                    isWhatsappClicked ? undefined : "https://wa.me/201220403484"
-                  }
+                  href="https://wa.me/201220403484"
                   className="text-gray-300 group-hover:text-white transition-colors"
                 >
                   201220403484+
